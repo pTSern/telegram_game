@@ -4,7 +4,6 @@ export default {
 	fetch(request, env): Promise<Response> {
 		switch(request.method) {
 			case 'POST': {
-				//
 				return poster(request, env);
 			}
 		}
