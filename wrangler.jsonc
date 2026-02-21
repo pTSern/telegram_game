@@ -1,0 +1,26 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "tlgame",
+	"main": "src/index.ts",
+	"compatibility_flags": [
+		"global_fetch_strictly_public"
+	],
+	"compatibility_date": "2025-11-18",
+	"observability": {
+		"enabled": true
+	},
+	"assets": {
+		"directory": "./public"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "PTS_KV",
+			"id": "ba9d18f3dfb243cebd8368c0840072a3"
+		}
+	],
+	"vars": {
+		"PTS_TOKEN": {
+			"blackjack": "8401266770:AAFlMkJ6CrtAAEGzKdEjDEAttkaQfQ7eV2g"
+		}
+	}
+}

@@ -1,7 +1,12 @@
 
 export namespace NSTelegram {
-	export type TCmdHandler = pFlex.TFunction<[IUpdate, KVNamespace<string>, ...string[]], Promise<string>>;
-	export type TActionHandler = pFlex.TFunction<[IUpdate, Env], Promise<string>>;
+	export interface ISmartEnv {
+		get(key: string): Promise<string>
+		set(key: string, value: string): Promise<void>
+	}
+
+	export type TCmdHandler = pFlex.TFunction<[IUpdate, ISmartEnv, ...string[]], Promise<string>>;
+	export type TActionHandler = pFlex.TFunction<[IUpdate, ISmartEnv], Promise<string>>;
 
 	export interface IUser {
 		id: number;

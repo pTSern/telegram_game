@@ -5,12 +5,19 @@ declare namespace Cloudflare {
 	interface GlobalProps {
 		mainModule: typeof import("./src/index");
 	}
-	interface Env {
-		PTS_FINANCER_BOT_TOKEN: string
-		PTS_FINANCER_BOT_KV: KVNamespace<string>
+	interface _IEnv {
+		token: string;
+		kv: KVNamespace<string>;
+	}
+	type TEnv = Record<string, _IEnv>
+
+	interface IEnv {
+		PTS_TOKEN: Record<string, string>;
+		PTS_KV: KVNamespace<string>;
+
 	}
 }
-interface Env extends Cloudflare.Env {}
+interface Env extends Cloudflare.IEnv {}
 
 // Begin runtime types
 /*! *****************************************************************************

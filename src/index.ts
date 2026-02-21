@@ -2,6 +2,7 @@ import poster from "./manager/poster";
 
 export default {
 	fetch(request, env): Promise<Response> {
+		console.log(`Received request: ${request.method} ${request.url}`);
 		switch(request.method) {
 			case 'POST': {
 				return poster(request, env);
